@@ -1,0 +1,1108 @@
+:root {
+    --main-c: orange;
+    /* --main-c: rgb(55, 0, 255); */
+    --white: white;
+    /* --white: rgb(255, 0, 0); */
+    --main-bg: rgb(46 46 53);
+    /* --main-bg: rgb(0, 255, 0); */
+    --transition: 0.3s;
+    --dur: 2s;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-c);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--main-bg);
+}
+
+.dot {
+    color: var(--white);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* height: calc(100vh - 8px); */
+    background-color: var(--main-bg);
+    font-family: "Playwrite GB S", "cursive";
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    /* color: var(--white); */
+}
+
+
+header nav {
+    position: relative;
+    top: 13px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+header nav a {
+    color: var(--white);
+    transition: .1s;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    right: 10%;
+    font-size: 20px;
+    min-height: 33px;
+    line-height: 32px;
+}
+
+header nav ul li {
+    position: relative;
+    text-align: center;
+    min-width: 100px;
+    transition: var(--transition);
+}
+
+header nav ul li:first-child {
+    min-width: 105px;
+}
+
+header nav ul li:hover a {
+    color: var(--main-c);
+}
+
+header nav ul li:hover {
+    font-size: 23px;
+}
+
+header nav ul li::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    transform: translateX(-50%);
+    background-color: var(--main-c);
+    transition: var(--transition);
+}
+
+header nav ul li:hover::after {
+    width: 100%;
+}
+
+header nav>a {
+    position: absolute;
+    left: 7%;
+    font-size: 35px;
+}
+
+header .icon span {
+    color: var(--main-c);
+
+}
+
+header a:hover span {
+    color: var(--white);
+}
+
+header .icon {
+    font-size: 40px;
+    transition: var(--transition);
+}
+
+header .icon::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    transform: translateX(-55%);
+    background-color: var(--main-c);
+    transition: var(--transition);
+}
+
+header .icon:hover::after {
+    width: 95%;
+}
+
+header .icon:hover {
+    font-size: 43px;
+    color: var(--main-c);
+}
+
+header nav .list {
+    display: none;
+}
+
+header nav ul.visible {
+    display: flex;
+    position: absolute;
+    z-index: 20;
+    /* Show the menu when visible class is added */
+}
+
+main {
+    height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .first-text {
+    width: 150px;
+}
+
+main .first-text .name {
+    font-size: 30px;
+    color: var(--white);
+    position: relative;
+    margin-bottom: 25px;
+}
+
+main .first-text .name::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--main-c);
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+}
+
+main .first-text .name::after {
+    content: "";
+    width: 60%;
+    height: 1px;
+    background-color: var(--main-c);
+    position: absolute;
+    left: 0;
+    bottom: -11px;
+}
+
+main .first-text button {
+    background-color: var(--main-bg);
+    border-style: none;
+    border: 1px solid var(--main-c);
+    padding: 7px 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+    color: var(--main-c);
+    border-radius: 6px;
+}
+
+main .first-text button:hover {
+    background-color: var(--main-c);
+    color: var(--white);
+}
+
+
+/* start the animation  --------------------------- */
+
+
+
+
+.hamster,
+.hamster div {
+    position: absolute;
+}
+
+.hamster {
+    animation: hamster var(--dur) ease-in-out infinite;
+    width: 7em;
+    height: 3.75em;
+    transform-origin: 50% 0;
+    z-index: 1;
+    rotate: 45deg;
+    /* top: -1em;
+    right: -2.50em; */
+    bottom: 57px;
+    left: 85px;
+}
+
+.hamster__head {
+    animation: hamsterHead var(--dur) ease-in-out infinite;
+    background: hsl(30, 90%, 55%);
+    border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+    box-shadow: 0 -0.25em 0 hsl(30, 90%, 80%) inset,
+        0.75em -1.55em 0 hsl(30, 90%, 90%) inset;
+    top: 0;
+    left: -2em;
+    width: 2.75em;
+    height: 2.5em;
+    transform-origin: 100% 50%;
+}
+
+.hamster__ear {
+    animation: hamsterEar var(--dur) ease-in-out infinite;
+    background: hsl(0, 90%, 85%);
+    border-radius: 50%;
+    box-shadow: -0.25em 0 hsl(30, 90%, 55%) inset;
+    top: -0.25em;
+    right: -0.25em;
+    width: 0.75em;
+    height: 0.75em;
+    transform-origin: 50% 75%;
+}
+
+.hamster__eye {
+    animation: hamsterEye var(--dur) linear infinite;
+    background-color: hsl(0, 0%, 0%);
+    border-radius: 50%;
+    top: 0.375em;
+    left: 1.25em;
+    width: 0.5em;
+    height: 0.5em;
+}
+
+.hamster__nose {
+    background: hsl(0, 90%, 75%);
+    border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+    top: 0.75em;
+    left: 0;
+    width: 0.2em;
+    height: 0.25em;
+}
+
+.hamster__body {
+    animation: hamsterBody var(--dur) ease-in-out infinite;
+    background: hsl(30, 90%, 90%);
+    border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+    box-shadow: 0.1em 0.75em 0 hsl(30, 90%, 55%) inset,
+        0.15em -0.5em 0 hsl(30, 90%, 80%) inset;
+    top: 0.25em;
+    left: 2em;
+    width: 4.5em;
+    height: 3em;
+    transform-origin: 17% 50%;
+    transform-style: preserve-3d;
+}
+
+.hamster__limb--fr,
+.hamster__limb--fl {
+    clip-path: polygon(0 0, 100% 0, 70% 80%, 60% 100%, 0% 100%, 40% 80%);
+    top: 2em;
+    left: 0.5em;
+    width: 1em;
+    height: 1.5em;
+    transform-origin: 50% 0;
+}
+
+.hamster__limb--fr {
+    animation: hamsterFRLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 80%) 80%, hsl(0, 90%, 75%) 80%);
+    transform: rotate(15deg) translateZ(-1px);
+}
+
+.hamster__limb--fl {
+    animation: hamsterFLLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 90%) 80%, hsl(0, 90%, 85%) 80%);
+    transform: rotate(15deg);
+}
+
+.hamster__limb--br,
+.hamster__limb--bl {
+    border-radius: 0.75em 0.75em 0 0;
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 70% 90%, 70% 100%, 30% 100%, 40% 90%, 0% 30%);
+    top: 1em;
+    left: 2.8em;
+    width: 1.5em;
+    height: 2.5em;
+    transform-origin: 50% 30%;
+}
+
+.hamster__limb--br {
+    animation: hamsterBRLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 80%) 90%, hsl(0, 90%, 75%) 90%);
+    transform: rotate(-25deg) translateZ(-1px);
+}
+
+.hamster__limb--bl {
+    animation: hamsterBLLimb var(--dur) linear infinite;
+    background: linear-gradient(hsl(30, 90%, 90%) 90%, hsl(0, 90%, 85%) 90%);
+    transform: rotate(-25deg);
+}
+
+.hamster__tail {
+    animation: hamsterTail var(--dur) linear infinite;
+    background: hsl(0, 90%, 85%);
+    border-radius: 0.25em 50% 50% 0.25em;
+    box-shadow: 0 -0.2em 0 hsl(0, 90%, 75%) inset;
+    top: 1.5em;
+    right: -0.5em;
+    width: 1em;
+    height: 0.5em;
+    transform: rotate(30deg) translateZ(-1px);
+    transform-origin: 0.25em 0.25em;
+}
+
+.image {
+    position: relative;
+}
+/* 
+.image .myProfile {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px dashed var(--white);
+    margin: 0 35px;
+    animation: rotate 4s linear infinite;
+
+}
+
+.image .myImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: rotate-reverse 4s linear infinite;
+
+} */
+
+.image div .myImage {
+    width: 300px;
+    height: 300px;
+    border: 3px dashed var(--white);
+    border-radius: 50%;
+    margin: 0 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: rotate-reverse 4s linear infinite;
+}
+
+/* Animations */
+
+@keyframes hamster {
+
+    from,
+    to {
+        transform: rotate(4deg) translate(-0.8em, 1.85em);
+    }
+
+    50% {
+        transform: rotate(0) translate(-0.8em, 1.85em);
+    }
+}
+
+@keyframes hamsterHead {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(0);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes hamsterEye {
+
+    from,
+    90%,
+    to {
+        transform: scaleY(1);
+    }
+
+    95% {
+        transform: scaleY(0);
+    }
+}
+
+@keyframes hamsterEar {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(0);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(12deg);
+    }
+}
+
+@keyframes hamsterBody {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(0);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(-2deg);
+    }
+}
+
+@keyframes hamsterFRLimb {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(50deg) translateZ(-1px);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(-30deg) translateZ(-1px);
+    }
+}
+
+@keyframes hamsterFLLimb {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(-30deg);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(50deg);
+    }
+}
+
+@keyframes hamsterBRLimb {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(-60deg) translateZ(-1px);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(20deg) translateZ(-1px);
+    }
+}
+
+@keyframes hamsterBLLimb {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(20deg);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(-60deg);
+    }
+}
+
+@keyframes hamsterTail {
+
+    from,
+    25%,
+    50%,
+    75%,
+    to {
+        transform: rotate(30deg) translateZ(-1px);
+    }
+
+    12.5%,
+    37.5%,
+    62.5%,
+    87.5% {
+        transform: rotate(10deg) translateZ(-1px);
+    }
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-reverse {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/* end the animation ------------------------------------------  */
+
+
+main .last-text {
+    width: 180px;
+    margin-top: -15px;
+}
+
+main .last-text .title {
+    color: var(--main-c);
+    font-weight: bold;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+main .last-text .jop {
+    color: var(--white);
+    font-size: 30px;
+    padding-bottom: 7px;
+}
+
+main .last-text ul {
+    display: flex;
+    flex-direction: row;
+}
+
+main .last-text ul li i {
+    padding: 0 3px;
+    position: relative;
+}
+
+.html::after,
+.css::after,
+.js::after {
+    content: "";
+    display: block;
+    width: 70%;
+    height: 70%;
+    background-color: white;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.js::after {
+    background-color: black;
+    transform: translate(-38%, -35%);
+}
+
+.html {
+    color: rgb(248, 63, 6);
+}
+
+.css {
+    color: rgb(0, 133, 234);
+}
+
+.js {
+    color: rgb(245, 221, 2);
+}
+
+.socail {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 13px;
+    bottom: 45%;
+    transform: translateY(50%);
+    z-index: 1;
+}
+
+.socail a i {
+    font-size: 40px;
+    transition: var(--transition);
+    color: var(--white);
+}
+
+.socail a i:hover {
+    padding-left: 10px;
+}
+
+@media (min-width:766px) {
+    main {
+        padding-left: 50px;
+
+    }
+}
+
+@media (max-width:767px) {
+    header nav .list {
+        position: absolute;
+        right: 7%;
+        top: 7px;
+        font-size: 40px;
+        color: var(--main-c);
+        display: block;
+        cursor: pointer;
+    }
+
+    header nav ul {
+        position: absolute;
+        right: 3%;
+        top: 60px;
+        font-size: 20px;
+        width: 190px;
+        min-height: 200px;
+        line-height: 33px;
+        background: #946000;
+        border-radius: 6px;
+        flex-direction: column;
+        display: none;
+        /* Default state: hidden */
+        z-index: 1;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main .first-text button,
+    main .first-text .name::after,
+    .phone-none {
+        display: none;
+    }
+
+    main .first-text {
+        width: 212px;
+    }
+
+    main .last-text {
+        width: fit-content;
+        margin-top: 15px;
+    }
+
+    main .first-text .name::before {
+
+        right: -17px;
+    }
+
+    .image .myImage {
+        width: 250px !important;
+        height: 250px !important;
+        margin: 0 !important;
+    }
+    .hamster {
+        font-size: 13px;
+        top: 164px;
+        left: 50px;
+        rotate: 39deg;
+    }
+}
+
+
+.about-me::after,
+.services::after,
+.project::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--main-c);
+    z-index: 8;
+}
+
+.about-me::after {
+    background-color: var(--main-bg);
+}
+
+section {
+    position: relative;
+}
+
+section .bag {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 270px;
+    z-index: 1;
+}
+
+section h2 {
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* color: var(--main-c); */
+    color: var(--white);
+}
+
+section .content {
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: calc(100% - 170px);
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+.about-me {
+    position: relative;
+    height: 100vh;
+    background-color: var(--main-c);
+}
+
+.about-me .top-style {
+    position: relative;
+    transform: translateY(-75%);
+    z-index: -3;
+}
+
+.about-me p {
+    margin: auto auto;
+    text-align: center;
+    color: var(--main-bg);
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+.services .bottom-style {
+    position: relative;
+    top: -2%;
+}
+
+.services {
+    position: relative;
+    height: 100vh;
+    background-color: var(--main-bg);
+}
+
+@media (max-width:430px) {
+    .services {
+        height: 140vh;
+    }
+
+}
+
+.services .services-container {
+    position: absolute;
+    /* top: 170px; */
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: calc(100% - 170px);
+    display: flex;
+    flex-wrap: wrap;
+    /* align-content: center; */
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: auto;
+}
+
+/* some edit */
+
+.services .services-container .services-box {
+    width: fit-content;
+    max-width: 272px;
+    height: 76px;
+    background-color: var(--main-c);
+    border-radius: 6px;
+    outline: 2px var(--main-c) dashed;
+    display: flex;
+    margin: 10px;
+    opacity: 0.9;
+    letter-spacing: 0.3px;
+    cursor: default;
+}
+
+.services .services-container .services-box:hover {
+    opacity: 1;
+}
+
+.services .services-container .services-box p {
+    color: var(--main-bg);
+    margin: auto;
+    padding: 10px;
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+.project {
+    height: 100vh;
+    position: relative;
+
+}
+
+.project .project-container {
+    position: absolute;
+    /* top: 170px; */
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 95%;
+    height: calc(100% - 170px);
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.project .project-container .porject-box {
+    min-width: 200px;
+    height: 325px;
+    border-radius: 6px;
+    margin: auto 15px;
+    background-color: var(--main-c);
+    overflow: hidden;
+    box-shadow: 0 0 7px var(--main-c);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.project .project-container .porject-box:hover {
+    transform: translateY(-10px);
+}
+
+.project .project-container .porject-box img {
+    width: 100%;
+    height: 150px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.project .project-container .porject-box h3 {
+    text-align: center;
+    margin: 5px;
+    letter-spacing: 0.6px;
+}
+
+.project .project-container .porject-box p {
+    margin: 16px 10px 0;
+    letter-spacing: 0.6px;
+}
+
+.project .project-container .porject-box a {
+    color: var(--main-bg);
+}
+
+
+
+
+.contact {
+    height: 100vh;
+    position: relative;
+
+}
+
+.contact .contact-container {
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 95%;
+    height: calc(100% - 170px);
+    display: flex;
+    z-index: 5;
+}
+
+.contact .other {
+    display: flex;
+}
+
+
+
+.contact .other .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 11px;
+    min-width: 130px;
+}
+
+.contact .other .info h4 {
+    color: var(--main-c);
+}
+
+.contact .other .info .phone,
+.contact .other .info address {
+    color: white;
+}
+
+
+.contact .contact-container .talk {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 275px;
+    margin-right: 11px;
+}
+
+.contact .contact-container .talk input,
+.contact .contact-container .talk textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    border-bottom: 2px solid var(--main-c);
+    background-color: #f9f9f9;
+    caret-color: var(--main-bg);
+    outline: none;
+    border-radius: 6px;
+}
+
+.contact .contact-container .talk textarea {
+    resize: none;
+    height: 200px;
+}
+
+.contact .contact-container .talk input[type="submit"] {
+    background-color: var(--main-c);
+    color: var(--white);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.contact .contact-container .talk input::placeholder,
+.contact .contact-container .talk textarea::placeholder {
+    opacity: .9;
+    transition: var(--transition);
+}
+
+.contact .contact-container .talk input:focus::placeholder,
+.contact .contact-container .talk textarea:focus::placeholder {
+    opacity: 0;
+}
+
+@media (max-width:550px) {
+    .contact .other {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .contact {
+        height: 160vh;
+    }
+
+}
+
+
+
+footer {
+    background-color: var(--main-c);
+    color: var(--main-bg);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+
+.-footer-socail {
+    display: flex;
+    position: absolute;
+    left: 13px;
+    bottom: 45%;
+    transform: translateY(50%);
+    z-index: 1;
+}
+
+.footer-socail ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    transform: translateY(-10px);
+}
+
+.footer-socail a i {
+    font-size: 40px;
+    transition: var(--transition);
+    color: var(--main-bg);
+}
+
+.footer-socail a i:hover {
+    transform: translateY(-10px);
+}
+
+
+.reed {
+    background-color: red;
+}
