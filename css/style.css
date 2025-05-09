@@ -1,4 +1,9 @@
 :root {
+    --color: #1e3a8a;
+    --color-r: 255;
+    --color-g: 165;
+    --color-b: 0;
+
     --main-c: orange;
     /* --main-c: rgb(55, 0, 255); */
     --white: white;
@@ -8,6 +13,43 @@
     --transition: 0.3s;
     --dur: 2s;
 }
+
+
+.waves-container {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.waves-container.top-wave {
+  top: -6px;
+  transform: rotate(180deg);
+}
+
+.waves-container.bottom-wave {
+  top: -96px;
+}
+
+.waves {
+  width: 100%;
+  height: 100px;
+}
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+.parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+.parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+.parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+
+@keyframes move-forever {
+  0%   { transform: translate3d(-90px, 0, 0); }
+  100% { transform: translate3d(85px, 0, 0); }
+}
+
 
 * {
     -moz-box-sizing: border-box;
@@ -79,8 +121,7 @@ header nav ul {
     position: absolute;
     right: 10%;
     font-size: 20px;
-    min-height: 33px;
-    line-height: 32px;
+    height: 100%;
 }
 
 header nav ul li {
@@ -88,6 +129,11 @@ header nav ul li {
     text-align: center;
     min-width: 100px;
     transition: var(--transition);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 7px;
 }
 
 header nav ul li:first-child {
@@ -107,7 +153,7 @@ header nav ul li::after {
     display: block;
     position: absolute;
     left: 50%;
-    bottom: -5px;
+    bottom: -7px;
     width: 0;
     height: 2px;
     transform: translateX(-50%);
@@ -750,7 +796,7 @@ main .last-text ul li i {
 }
 
 
-.about-me::after,
+/* .about-me::after, */
 .services::after,
 .project::after {
     content: "";
@@ -763,9 +809,9 @@ main .last-text ul li i {
     z-index: 8;
 }
 
-.about-me::after {
+/* .about-me::after {
     background-color: var(--main-bg);
-}
+} */
 
 section {
     position: relative;
@@ -989,6 +1035,7 @@ section .content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-left: 11px;
     min-width: 130px;
 }
@@ -1035,6 +1082,12 @@ section .content {
     color: var(--white);
     font-size: 20px;
     cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 0 7px var(--main-c);
+}
+.contact .contact-container .talk input[type="submit"]:hover {
+    background-color: var(--main-bg);
+    color: var(--main-c);
 }
 
 .contact .contact-container .talk input::placeholder,
