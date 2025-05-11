@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abdo Gnidy - Front-End Developer specializing in responsive web design and development.">
+    <meta name="keywords" content="Front-End Developer, Web Design, Web Development, Abdo Gnidy">
+    <meta name="author" content="Abdo Gnidy">
     <title>abdo</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/all.min.css">
@@ -17,29 +20,34 @@
 <body>
 
     <div class="landding">
-        <header>
-            <nav>
-                <a href="#about-me" class="icon">AA<span class="dot">.</span></a>
-                <i class="list fa-solid fa-bars"></i>
-                <ul>
+            <nav aria-label="Main Navigation">
+                <a href="#about-me" class="icon" aria-label="Homepage">
+                    AG<span class="dot">.</span>
+                </a>
+                <button class="menu-toggle" aria-label="Toggle Navigation Menu">
+                    <i class="list fa-solid fa-bars"></i>
+                </button>
+                <ul class="nav-links">
                     <li><a href="#about-me">About Me</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#project">project</a></li>
-                    <li><a href="#contact">contact</a></li>
+                    <li><a href="#project">Project</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-        </header>
         <main>
             <div class="first-text">
                 <div class="name">
-                    <div>Abdo Algnidy</div>
+                    <div>Abdo Gnidy</div>
                 </div>
                 <a href="#contact"><button>Contact Me</button></a>
             </div>
             <!-- start animation -->
 
+
+
             <div class="image">
-                <div class="myProfile"><img src="./images/abdoo.png" class="myImage" alt="Profile Picture"> </div>
+                
+                <div class="myProfile"><img src="./images/avatar.png" class="myImage" alt="Profile Picture"> </div>
                 <div class="hamster">
                     <div class="hamster__body">
                         <div class="hamster__head">
@@ -60,32 +68,38 @@
             <div class="last-text">
                 <div class="title">INTRODUCTION</div>
                 <div class="jop">Front-End Developer</div>
-                <ul>
-                    <li><i class=" html fa-brands fa-html5 fa-3x"></i></li>
-                    <li><i class=" css fa-brands fa-css3-alt fa-3x"></i></li>
-                    <li><i class=" js fa-brands fa-js fa-3x"></i></li>
-                </ul>
+                <div>
+                    <ul>
+                        <li><i class=" html fa-brands fa-html5 fa-3x"></i></li>
+                        <li><i class=" css fa-brands fa-css fa-3x"></i></li> <!-- Fixed -->
+                        <li><i class=" js fa-brands fa-js fa-3x"></i></li>
+                        <li><i class=" react fa-brands fa-react fa-3x"></i></li> <!-- ReactJS Icon -->
+                        <li><i class=" node-js fa-brands fa-node-js fa-3x"></i></li>                        
+                    </ul>
+                </div>
             </div>
         </main>
         <div class="socail phone-none ">
             <ul>
                 <li>
-                    <a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3B8YQc3uHwSzWkpEpuUX16yQ%3D%3D"
-                        target="blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/algnidy1/myProfile" target="_blank"><i class="fa-brands fa-square-github"></i></a>
                 </li>
                 <li>
-                    <a href="#" target="blank"><i class="fa-brands fa-square-github"></i></a>
+                    <a href="https://www.linkedin.com/in/gnidy/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </li>
                 <li>
-                    <a href="#" target="blank"><i class="fa-solid fa-square-envelope"></i></a>
+                    <a href="mailto:abdo@gnidy.com" target="_blank"><i class="fa-solid fa-square-envelope"></i></a>
                 </li>
                 <li>
-                    <a href="#" target="blank"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://github.com/algnidy1/myProfile" target="_blank"><i class="fa-brands fa-square-github"></i></a>
                 </li>
+                <!-- <li>
+                    <a href="#" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                </li> -->
             </ul>
         </div>
     </div>
-    <section id="about-me" class="about-me">
+    <section id="about-me" class="about-me ">
           <div class="waves-container bottom-wave">
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
       <defs>
@@ -101,64 +115,124 @@
   </div>
         <h2>About Me </h2>
         <div class="content">
-            <p>Hello! My name is Abdo Algnidy, and I am a passionate Front-End Developer. I specialize in crafting
+            <p class="animate-box">Hello! My name is Abdo Algnidy, and I am a passionate Front-End Developer. I specialize in crafting
                 beautiful, responsive websites with a focus on user experience. My goal is to bring ideas to life
                 through clean, efficient code.</p>
         </div>
         <svg class=" bag" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#2E2E35"
+            <path fill="var(--main-bg)"
                 d="M25.7,-25.4C37.9,-20.3,55.6,-16.6,61.9,-7C68.2,2.6,63.3,18.1,52.8,25.1C42.4,32.2,26.5,30.7,14,32.9C1.4,35.1,-7.8,40.9,-20.6,42.4C-33.3,43.9,-49.7,41,-55.5,31.7C-61.2,22.4,-56.5,6.6,-53.1,-8.8C-49.7,-24.2,-47.6,-39.3,-39,-45C-30.4,-50.6,-15.2,-46.9,-4.2,-41.9C6.7,-36.8,13.5,-30.4,25.7,-25.4Z"
                 transform="translate(100 100)" />
         </svg>
 
     </section>
     <section id="services" class="services">
-  <div class="waves-container top-wave">
-    <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-      </defs>
-      <g class="parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.7)" />
-        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.5)" />
-        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.3)" />
-        <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(var(--color-r),var(--color-g),var(--color-b))" />
-      </g>
-    </svg>
-  </div>
+        <div class="waves-container top-wave">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.7)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(var(--color-r),var(--color-g),var(--color-b))" />
+            </g>
+            </svg>
+        </div>
         <h2>services</h2>
         <svg class=" bag" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#2E2E35"
+            <path fill="var(--main-c)" 
                 d="M25.7,-25.4C37.9,-20.3,55.6,-16.6,61.9,-7C68.2,2.6,63.3,18.1,52.8,25.1C42.4,32.2,26.5,30.7,14,32.9C1.4,35.1,-7.8,40.9,-20.6,42.4C-33.3,43.9,-49.7,41,-55.5,31.7C-61.2,22.4,-56.5,6.6,-53.1,-8.8C-49.7,-24.2,-47.6,-39.3,-39,-45C-30.4,-50.6,-15.2,-46.9,-4.2,-41.9C6.7,-36.8,13.5,-30.4,25.7,-25.4Z"
                 transform="translate(100 100)" />
         </svg>
 
 
         <!-- ur full is 6 to be beautiful -->
-        <div class="services-container">
-            <div class="services-box">
-                <p>building profile</p>
-            </div>
-            <div class="services-box">
-                <p>wordpress themes</p>
-            </div>
-            <div class="services-box">
-                <p>wordpress</p>
-            </div>
-            <div class="services-box">
-                <p>build landding page</p>
-            </div>
-            <div class="services-box">
-                <p>building shop page</p>
-            </div>
-            <div class="services-box">
-                <p>building any idea</p>
-            </div>
-        </div>
+
+	    <div id="fh5co-features">
+		    <div class="container">
+                <div class="services-padding">
+                    <div class="row">
+                        <div  class="animate-box">
+                            <div class="feature-left ">
+                                <span class="icon">
+                                    <i class="fa-solid fa-paint-brush"></i>
+                                </span>
+                                <div class="feature-copy">
+                                    <h3>Web Design</h3>
+                                    <p>Creating visually appealing and user-friendly website designs tailored to your needs.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="animate-box">
+                            <div class="feature-left">
+                                <span class="icon">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                                <div class="feature-copy">
+                                    <h3>Branding</h3>
+                                    <p>Helping businesses establish a strong and consistent brand identity.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div  class="animate-box">
+                            <div class="feature-left">
+                                <span class="icon">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </span>
+                                <div class="feature-copy">
+                                    <h3>Analytics</h3>
+                                    <p>Providing insights and data-driven strategies to improve your online presence.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div  class="animate-box">
+                            <div class="feature-left">
+                                <span class="icon">
+                                    <i class="fa-solid fa-chart-bar"></i>
+                                </span>
+                                <div class="feature-copy">
+                                    <h3>Web Development</h3>
+                                    <p>Building responsive and high-performance websites using modern technologies.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div  class="animate-box">
+                            <div class="feature-left">
+                                <span class="icon">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </span>
+                                <div class="feature-copy">
+                                    <h3>Web Marketing</h3>
+                                    <p>Implementing effective digital marketing strategies to grow your audience.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div  class="animate-box">
+                            <div class="feature-left">
+                                <span class="icon">
+                                    <i class="fa-solid fa-comments"></i>
+                                </span>
+                                <div class="feature-copy">
+                                    <h3>Support</h3>
+                                    <p>Offering reliable and ongoing support to ensure your website runs smoothly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+		    </div>
+	    </div>
 
         
     </section>
-    <section id="project" class="project">
+    <section id="project" class="project" >
         <h2>project</h2>
         <svg class=" bag" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <path fill="var(--main-c)"
@@ -167,56 +241,61 @@
         </svg>
 
         <div class="project-container">
-            <div class="porject-box">
-                <a href="https://algnidy1.github.io/higazi/" target="_blank">
-                    <img src="./images/what ever.png" alt="">
-                    <h3>Profile</h3>
-                    <p>this is my friend's profile.</p>
-                </a>
-            </div>
-            <div class="porject-box">
-                <a href="https://algnidy1.github.io/shop/" target="_blank">
+            <div class="porject-box animate-box">
+                <a href="https://algnidy1.github.io/Bill-System/" target="_blank">
                     <img src="./images/ShopSystem.png" alt="">
                     <h3>Bill App</h3>
                     <p>this is a system to print and claculate bill and other things.</p>
                 </a>
             </div>
-            <div class="porject-box">
-                <a href="#" target="_blank">
-                    <img src="images/Screenshot 2024-11-11 001754.png" alt="">
-                    <h3>justes</h3>
+            <div class="porject-box animate-box">
+                <a href="https://algnidy1.github.io/firstWeb/" target="_blank">
+                    <img src="images/firstWeb.png" alt="">
+                    <h3>first web I build</h3>
                     <p>that is my first projct i build and it was the best for me.</p>
                 </a>
             </div>
-            <div class="porject-box">
-                <a href="#" target="_blank">
-                    <img src="images/Screenshot 2024-11-12 003946.png" alt="">
-                    <h3>alien</h3>
-                    <p>that one was easy because i was simple and beautiful.</p>
-                </a>
-            </div>
-            <div class="porject-box">
-                <a href="#">
-                    <img src="./a.jpeg" alt="">
-                    <h3>Profile</h3>
-                    <p>this is my profile.</p>
+            <div class="porject-box animate-box">
+                <a href="https://algnidy1.github.io/secondWeb/" target="_blank">
+                    <img src="images/secondWeb.png" alt="">
+                    <h3>second web I build</h3>
+                    <p>that is my first projct i build and it was the best for me.</p>
                 </a>
             </div>
         </div>
 
     </section>
-    <section id="contact" class="contact">
-        <h2>contact</h2>
-        <svg class=" bag" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="var(--main-c)"
-                d="M25.7,-25.4C37.9,-20.3,55.6,-16.6,61.9,-7C68.2,2.6,63.3,18.1,52.8,25.1C42.4,32.2,26.5,30.7,14,32.9C1.4,35.1,-7.8,40.9,-20.6,42.4C-33.3,43.9,-49.7,41,-55.5,31.7C-61.2,22.4,-56.5,6.6,-53.1,-8.8C-49.7,-24.2,-47.6,-39.3,-39,-45C-30.4,-50.6,-15.2,-46.9,-4.2,-41.9C6.7,-36.8,13.5,-30.4,25.7,-25.4Z"
-                transform="translate(100 100)" />
-        </svg>
-
-    </section>
+<section id="contact" class="contact">
+    
+    <h2>Contact</h2>
+    <svg class="bag" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="var(--main-bg)"
+            d="M25.7,-25.4C37.9,-20.3,55.6,-16.6,61.9,-7C68.2,2.6,63.3,18.1,52.8,25.1C42.4,32.2,26.5,30.7,14,32.9C1.4,35.1,-7.8,40.9,-20.6,42.4C-33.3,43.9,-49.7,41,-55.5,31.7C-61.2,22.4,-56.5,6.6,-53.1,-8.8C-49.7,-24.2,-47.6,-39.3,-39,-45C-30.4,-50.6,-15.2,-46.9,-4.2,-41.9C6.7,-36.8,13.5,-30.4,25.7,-25.4Z"
+            transform="translate(100 100)" />
+    </svg>
+    <div class="contact-container animate-box">
+        <form action="https://formspree.io/f/mnndbavr" method="POST" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+            <input type="text" name="_gotcha" style="display:none">
+            <input type="hidden" name="_redirect" value="https://gnidy.com/subdirectory/thank-you.html">
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
     <footer>
-        <div class="footer-bottom">
-            <p>© 2024 Copyright _Abdo Algnidy_</p>
+        <div class="footer-bottom ">
+            <p> Copyright © <span id="current-year"></span> __Abdo Gnidy__</p>
         </div>
     </footer>
     <script src="js/script.js"></script>
