@@ -776,6 +776,8 @@ main .last-text ul li i {
 }
 
 
+section.contact::after,
+.project::after,
 .services::after,
 .project::after {
     content: "";
@@ -787,19 +789,15 @@ main .last-text ul li i {
     background-color: var(--main-c);
     z-index: 8;
 }
-
-section {
-    position: relative;
+.project::after {
+    bottom: -20px !important;
+}
+.project::after,
+section.contact::after {
+    box-shadow: 0px 0px 9px 9px var(--main-c);
 }
 
-section .bag {
-    position: absolute;
-    top: 85px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 270px;
-    z-index: 1;
-}
+
 
 section h2 {
     position: absolute;
@@ -849,7 +847,6 @@ section .content {
 
 .services {
     position: relative;
-    /* height: 100vh; */
     background-color: var(--main-bg);
 }
 
@@ -885,43 +882,49 @@ section .content {
     padding: 7em 0;
 }
 .row {
-    display: grid; /* Use CSS Grid */
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 20px; /* Add spacing between columns */
+    display: flex; 
+    flex-wrap: wrap;
     width: 100%;
     margin: 0 auto 40px; /* Center and add bottom margin */
     text-align: center;
+    justify-content: space-evenly;
 }
 
 
-
-@media screen and (min-width: 1200px) {
-    .row {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+@media (max-width: 767px) {
+    .about-me {
+        height: 80vh !important; /* Adjust height for mobile screens */
     }
-}
-
-@media screen and (max-width: 992px) {
-    .row {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        margin-bottom: 30px;
-        padding: 0 30px !important;
+    .services {
+        text-align: center; /* Center-align content */
     }
-}
 
-@media screen and (max-width: 768px) {
+    .services .bottom-style {
+        top: 0; /* Adjust positioning */
+    }
+
+    #fh5co-features {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    #fh5co-features .feature-left {
+    margin: 50px auto !important;
+    width: 90% !important;
+    }
+
     .row {
-        grid-template-columns: minmax(300px, 1fr); /* Adjust minimum width for smaller screens */
+        /* grid-template-columns: minmax(300px, 1fr); Adjust minimum width for smaller screens */
         margin-bottom: 30px;
         padding: 0 10px !important;
     }
-    #fh5co-features .feature-left {
-    margin: 10px auto !important;
-    }
 }
+
+
 
 #fh5co-features .feature-left {
     margin: 30px auto;
+    width: 290px ;
+
 }
 
 #fh5co-features .feature-left .icon {
@@ -970,28 +973,31 @@ section .content {
 
 
 .project {
-    height: 100vh;
     position: relative;
 
 }
 
 .project .project-container {
-    scrollbar-width: none;
-    /* scrollbar-color: green; */
-    position: absolute;
-    /* top: 170px; */
-    bottom: 7px;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 95%;
-    height: calc(100% - 170px);
+    padding: 190px 0 66px;
     display: flex;
+    justify-content: start;
     overflow-x: auto;
     overflow-y: hidden;
+    width: 90%;
+    margin-bottom: 20px;
+    scrollbar-width: 0.1vw;
 }
 
-.project .project-container .porject-box {
-    min-width: 200px;
+.project-container > .displayX {
+    display: flex;
+}
+
+
+.project .project-container .project-box {
+    width: 200px;
     height: 325px;
     border-radius: 6px;
     margin: auto 15px;
@@ -1000,31 +1006,32 @@ section .content {
     box-shadow: 0 0 7px var(--main-c);
     cursor: pointer;
     transition: var(--transition);
+    text-align: center;
 }
 
-.project .project-container .porject-box:hover {
+.project .project-container .project-box:hover {
     transform: translateY(-10px);
 }
 
-.project .project-container .porject-box img {
+.project .project-container .project-box img {
     width: 100%;
     height: 150px;
     border-radius: 6px;
     object-fit: cover;
 }
 
-.project .project-container .porject-box h3 {
+.project .project-container .project-box h3 {
     text-align: center;
     margin: 5px;
     letter-spacing: 0.6px;
 }
 
-.project .project-container .porject-box p {
+.project .project-container .project-box p {
     margin: 16px 10px 0;
     letter-spacing: 0.6px;
 }
 
-.project .project-container .porject-box a {
+.project .project-container .project-box a {
     color: var(--main-bg);
 }
 
@@ -1040,8 +1047,7 @@ section .content {
 
 
 
-
-
+/* start the content */
 
 .contact {
     position: relative;
@@ -1052,6 +1058,24 @@ section .content {
     background-size: cover;
     background-blend-mode: overlay;
     color: var(--text-color);
+}
+
+section .bag {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 270px;
+    z-index: 1;
+}
+
+section h2 {
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: var(--white);
 }
 
 .contact-container {
