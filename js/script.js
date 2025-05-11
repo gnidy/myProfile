@@ -82,3 +82,16 @@ function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        const loader = document.getElementById("loader");
+        if (loader) {
+            loader.style.display = "none";
+        }
+    }, 1550); // 3 seconds
+});
