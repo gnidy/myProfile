@@ -3,16 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Abdo Gnidy</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/all.min.css">
+    <title>404 - Page Not Found</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <style>
-        .thank-you-container {
+        body {
+            background-color: var(--main-bg);
+            min-height: 100vh;
+            margin: 0;
+            font-family: var(--body-font);
+        }
+        :root {
+            --error-color: #e74c3c;
+            --error-bg: #c0392b;
+            --main-c: orange;
+            --main-bg: rgb(46 46 53);
+            --body-font: 'Playwrite GB S', 'cursive';
+        }
+
+        .error-container {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -23,7 +35,7 @@
             position: relative;
         }
 
-        .thank-you-content {
+        .error-content {
             background: white;
             padding: 40px 20px;
             border-radius: 15px;
@@ -38,19 +50,19 @@
             justify-content: center;
         }
 
-        .thank-you-content::before {
+        .error-content::before {
             content: '';
             position: absolute;
             top: -10px;
             left: -10px;
             right: -10px;
             bottom: -10px;
-            background: linear-gradient(135deg, var(--main-c), var(--success-color));
+            background: linear-gradient(135deg, var(--main-c), var(--error-bg));
             border-radius: 20px;
             z-index: -1;
         }
 
-        .checkmark {
+        .error-icon {
             margin: 20px 0;
             animation: float 3s ease-in-out infinite;
             width: 100%;
@@ -58,33 +70,32 @@
             margin: 0 auto;
         }
 
-        .checkmark-container {
+        .error-icon-container {
             padding: 20px;
             background: white;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .checkmark__circle {
-            stroke: var(--success-color);
+        .error-icon__circle {
+            stroke: var(--error-color);
             stroke-width: 2;
             stroke-dasharray: 157;
             stroke-dashoffset: 157;
             animation: circle 0.7s ease-in-out forwards;
         }
 
-        .checkmark__check {
-            stroke: var(--success-color);
+        .error-icon__cross {
+            stroke: var(--error-color);
             stroke-width: 2;
             stroke-linecap: round;
             stroke-dasharray: 48;
             stroke-dashoffset: 48;
-            animation: check 0.7s ease-in-out 0.3s forwards;
+            animation: cross 0.7s ease-in-out 0.3s forwards;
         }
 
         h1 {
-            font-family: 'Playwrite GB S', cursive;
-            color: var(--success-color);
+            color: var(--error-color);
             margin: 0 0 15px;
             font-size: clamp(1.5rem, 5vw, 2.5rem);
             letter-spacing: 0.8px;
@@ -99,40 +110,39 @@
             padding: 0 15px;
         }
 
-        .button {
+        .back-home {
             display: inline-block;
             padding: 12px 24px;
-            background: linear-gradient(135deg, var(--main-c), var(--success-color));
+            background: linear-gradient(135deg, var(--main-c), var(--error-bg));
             color: white;
             text-decoration: none;
             border-radius: 12px;
             transition: all 0.3s ease;
-            font-family: 'Playwrite GB S', cursive;
             font-size: clamp(0.9rem, 3vw, 1.1rem);
             letter-spacing: 0.5px;
-            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2);
+            box-shadow: 0 5px 15px rgba(var(--main-bg), 0.2);
             margin: 0 auto;
             max-width: 300px;
             position: relative;
             overflow: hidden;
         }
 
-        .button::before {
+        .back-home::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, var(--main-c), transparent);
+            background: linear-gradient(90deg, transparent, var(--error-color), transparent);
             transition: 0.5s;
         }
 
-        .button:hover::before {
+        .back-home:hover::before {
             left: 100%;
         }
 
-        .button:hover {
+        .back-home:hover {
             transform: translateY(-3px);
         }
 
@@ -145,62 +155,56 @@
             100% { stroke-dashoffset: 0; }
         }
 
-        @keyframes check {
+        @keyframes cross {
             100% { stroke-dashoffset: 0; }
         }
 
         @media (max-width: 768px) {
-            .thank-you-content {
+            .error-content {
                 padding: 30px 15px;
             }
 
-            .checkmark {
+            .error-icon {
                 max-width: 100px;
             }
 
-            .button {
+            .back-home {
                 padding: 10px 20px;
             }
 
-            .thank-you-container {
+            .error-container {
                 padding: 10px;
             }
         }
 
         @media (max-height: 600px) {
-            .thank-you-content {
+            .error-content {
                 min-height: 200px;
                 padding: 20px 10px;
             }
 
-            .checkmark {
+            .error-icon {
                 max-width: 80px;
             }
 
-            .button {
+            .back-home {
                 padding: 8px 16px;
             }
         }
-        :root {
-            --success-color: #2ecc71;
-            --main-c: orange;
-            --main-bg: rgb(46 46 53);
-        }
     </style>
 </head>
-
 <body>
-    <div class="thank-you-container">
-        <div class="thank-you-content">
-            <div class="checkmark">
-                <svg class="checkmark" viewBox="0 0 52 52" width="100" height="100">
-                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-icon">
+                <svg class="error-icon" viewBox="0 0 52 52" width="100" height="100">
+                    <circle class="error-icon__circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="error-icon__cross" fill="none" d="M14.1 14.1l24 24 M14.1 37.9l24 -24"/>
                 </svg>
             </div>
-            <h1>Send Successfully</h1>
-            <p>Thank you for reaching out! I'll get back to you soon.</p>
-            <a href="/" class="button">Back to Home</a>
+            <h1>Page Not Found</h1>
+            <p>The page you're looking for doesn't exist or has been moved.</p>
+            <a href="/" class="back-home">Go Back Home</a>
         </div>
     </div>
 </body>

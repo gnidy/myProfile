@@ -20,6 +20,33 @@ document.addEventListener("DOMContentLoaded", () => {
         currentYearElement.textContent = new Date().getFullYear();
     }
 
+    // Handle routing
+    const validRoutes = ['/'];
+    
+    // Add valid routes for each section
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        const id = section.id;
+        if (id) {
+            validRoutes.push(`/${id}`);
+        }
+    });
+
+    // Check if current path is valid
+    const currentPath = window.location.pathname;
+    if (!validRoutes.includes(currentPath)) {
+        // If not valid, redirect to 404 page
+        window.location.href = '/404.html';
+    }
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', () => {
+        const newPath = window.location.pathname;
+        if (!validRoutes.includes(newPath)) {
+            window.location.href = '/404.html';
+        }
+    });
+
     // Handle loader
     setTimeout(function () {
         const loader = document.getElementById("loader");
@@ -85,6 +112,29 @@ document.addEventListener("DOMContentLoaded", () => {
         box.dataset.index = index;
         observer.observe(box);
     });
+
+    // Form submission
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            fetch('/submit-form', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/thank-you.html';
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                alert('There was an error submitting the form.');
+            });
+        });
+    }
 });
 
 function validateEmail(email) {
