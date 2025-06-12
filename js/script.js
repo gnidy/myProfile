@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('message').value = '';
 
             // Submit form using Fetch API
-            fetch(this.action, {
-                method: this.method,
+            fetch('https://formspree.io/f/mnndbavr', {
+                method: 'POST',
                 body: new FormData(this),
                 headers: {
                     'Accept': 'application/json'
@@ -124,11 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
 
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
