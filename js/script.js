@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach(section => {
         const id = section.id;
         if (id) {
-            validRoutes.push(`/${id}`);
             validRoutes.push(`#${id}`);
         }
     });
@@ -115,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     throw new Error(errorData.message || 'Form submission failed');
                 }
 
-                alert('Thank you for your message! I will get back to you soon.');
+                window.location.href = 'thank-you.html';
                 this.reset();
             } catch (error) {
                 console.error('Error:', error);
