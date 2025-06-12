@@ -16,6 +16,78 @@
 
 
 
+.project .project-container .project-box {
+    width: 250px;
+    height: 350px;
+    border-radius: 12px;
+    margin: 20px;
+    background: linear-gradient(135deg, var(--main-c), rgba(var(--color-r),var(--color-g),var(--color-b),0.8));
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.project .project-container .project-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project .project-container .project-box:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.project .project-container .project-box:hover::before {
+    opacity: 1;
+}
+
+.project .project-container .project-box img {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px 12px 0 0;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project .project-container .project-box:hover img {
+    transform: scale(1.05);
+}
+
+.project .project-container .project-box h3 {
+    margin: 15px 0 10px;
+    font-size: 1.2rem;
+    color: var(--main-bg);
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.project .project-container .project-box p {
+    margin: 10px 20px 20px;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+
+.project .project-container .project-box a {
+    color: var(--main-bg);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
 /* start animaion waves */
 
 
