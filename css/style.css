@@ -8,6 +8,7 @@
     --border-color: #ccc;
     --transition: 0.3s;
     --dur: 2s;
+    scroll-behavior: smooth;
 }
 
 

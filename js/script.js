@@ -20,81 +20,36 @@ document.addEventListener("DOMContentLoaded", () => {
         currentYearElement.textContent = new Date().getFullYear();
     }
 
-    // Handle routing
-    const validRoutes = ['/'];
+    // Handle 404 for invalid page paths and sections
+    const validPages = ['/']; // Add other valid pages if needed
+    const currentPage = window.location.pathname;
+    const validSectionIds = ['about-me', 'services', 'project', 'contact']; // Add other valid section IDs
     
-    // Add valid routes for each section
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        const id = section.id;
-        if (id) {
-            validRoutes.push(`#${id}`);
+    // Check if current page is valid
+    if (!validPages.includes(currentPage)) {
+        // If not valid and not a valid section hash, redirect to 404
+        const hash = window.location.hash;
+        if (!hash || !validSectionIds.includes(hash.substring(1))) {
+            window.location.href = '/404.html';
         }
-    });
-    validRoutes.push('/404.html');
-    validRoutes.push('/thank-you.html');
-
-    // Check if current path is valid
-    const currentPath = window.location.pathname + window.location.hash;
-    if (!validRoutes.includes(currentPath)) {
-        // If not valid, redirect to 404 page
-        window.location.href = '/404.html';
     }
 
     // Listen for hash changes
     window.addEventListener('hashchange', () => {
-        const newPath = window.location.pathname + window.location.hash;
-        if (!validRoutes.includes(newPath)) {
+        const currentPage = window.location.pathname;
+        const hash = window.location.hash;
+        if (!validPages.includes(currentPage) && (!hash || !validSectionIds.includes(hash.substring(1)))) {
             window.location.href = '/404.html';
         }
     });
 
-    // Handle direct URL access with hash
-    if (window.location.hash) {
-        const targetId = window.location.hash.substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            // Scroll to the section
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-            // Prevent 404 redirect for valid sections
-            return;
-        }
-        // Only redirect to 404 if section doesn't exist
-        window.location.href = '/404.html';
-    }
 
-    // Add smooth scroll behavior for section links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
 
-    // Add scroll behavior for direct URL access
-    if (window.location.hash) {
-        const targetId = window.location.hash.substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
 
-    // Add scroll behavior for section links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
+
+
+
+
 
     // Handle loader
     setTimeout(function () {
