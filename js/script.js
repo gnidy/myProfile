@@ -55,45 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 800); // 0.8 seconds
 
-    // Form submission
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission for validation
 
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const messageInput = document.getElementById('message');
-
-        const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
-        const message = messageInput.value.trim();
-
-        this.submit(); // Submit the form if validation passes
-
-        // Clear the input fields
-        nameInput.value = '';
-        emailInput.value = '';
-        messageInput.value = '';
-         const form = this;
-
-        // Send the form data using Fetch API
-        fetch(form.action, {
-            method: form.method,
-            body: new FormData(form),
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                // Redirect to the thank-you page
-                window.location.href = 'https://gnidy.com/thank-you.html';
-            } else {
-                alert('There was an issue submitting the form. Please try again.');
-            }
-        }).catch(error => {
-            console.error('Error:', error);
-            alert('There was an error submitting the form.');
-        });
-    });
 
     // Animation
     const animateBoxes = document.querySelectorAll(".animate-box");
