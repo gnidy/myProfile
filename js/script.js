@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Handle routing
-    const validRoutes = ['/']; // Start with root path
+    const validRoutes = ['/'];
     
     // Add valid routes for each section
     const sections = document.querySelectorAll('section');
@@ -31,10 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
             validRoutes.push(`/${id}`);
         }
     });
-
-    // Add specific pages
-    validRoutes.push('/404.html');
-    validRoutes.push('/thank-you.html');
 
     // Check if current path is valid
     const currentPath = window.location.pathname;
@@ -82,49 +78,46 @@ document.addEventListener("DOMContentLoaded", () => {
     // Form submission
     const form = document.getElementById('contactForm');
     if (form) {
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', async function(event) {
             event.preventDefault();
 
             // Get form values
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            // Validate form
-            if (!name || !email || !message) {
-                alert('Please fill in all fields');
-                return;
-            }
-
             // Validate email
+            const email = this.querySelector('input[type="email"]').value;
             if (!validateEmail(email)) {
                 alert('Please enter a valid email address');
                 return;
             }
 
-            // Submit form using Fetch API
-            fetch('https://formspree.io/f/mnndbavr', {
-                method: 'POST',
-                body: new FormData(this),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    // Clear form fields
-                    document.getElementById('name').value = '';
-                    document.getElementById('email').value = '';
-                    document.getElementById('message').value = '';
-                    
-                    // Redirect to thank-you page
-                    window.location.href = 'https://gnidy.com/thank-you.html';
-                } else {
+            // Get form data
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
+
+            // Submit form using fetch
+            try {
+                const response = await fetch('https://formspree.io/f/mnndbavr', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
                     throw new Error('Form submission failed');
                 }
-            }).catch(error => {
+
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            } catch (error) {
                 console.error('Error:', error);
                 alert('There was an issue submitting the form. Please try again.');
-            });
+            }
         });
     }
 });
