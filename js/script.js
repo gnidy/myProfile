@@ -29,11 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const id = section.id;
         if (id) {
             validRoutes.push(`/${id}`);
+            validRoutes.push(`#${id}`);
         }
     });
+    validRoutes.push('/404.html');
+    validRoutes.push('/thank-you.html');
 
     // Check if current path is valid
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname + window.location.hash;
     if (!validRoutes.includes(currentPath)) {
         // If not valid, redirect to 404 page
         window.location.href = '/404.html';
@@ -41,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Listen for hash changes
     window.addEventListener('hashchange', () => {
-        const newPath = window.location.pathname;
+        const newPath = window.location.pathname + window.location.hash;
         if (!validRoutes.includes(newPath)) {
             window.location.href = '/404.html';
         }
@@ -82,8 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
 
             // Get form values
-            // Validate email
-            const email = this.querySelector('input[type="email"]').value;
+            const name = this.querySelector('input[name="name"]').value.trim();
+            const email = this.querySelector('input[name="email"]').value.trim();
+            const message = this.querySelector('textarea[name="message"]').value.trim();
+
+            // Validate all fields
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+
             if (!validateEmail(email)) {
                 alert('Please enter a valid email address');
                 return;
@@ -100,14 +111,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 if (!response.ok) {
-                    throw new Error('Form submission failed');
+                    const errorData = await response.json();
+                    throw new Error(errorData.message || 'Form submission failed');
                 }
 
                 alert('Thank you for your message! I will get back to you soon.');
                 this.reset();
             } catch (error) {
                 console.error('Error:', error);
-                alert('There was an issue submitting the form. Please try again.');
+                alert(`Error: ${error.message}`);
             }
         });
     }
