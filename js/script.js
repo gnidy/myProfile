@@ -89,22 +89,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Get form data
-            const formData = new FormData(this);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                message: formData.get('message')
-            };
-
             // Submit form using fetch
             try {
                 const response = await fetch('https://formspree.io/f/mnndbavr', {
                     method: 'POST',
-                    body: JSON.stringify(data),
+                    body: new FormData(this),
                     headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
+                        'Accept': 'application/json'
                     }
                 });
 
