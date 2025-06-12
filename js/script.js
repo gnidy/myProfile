@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Handle routing
-    const validRoutes = ['/'];
+    const validRoutes = ['/']; // Start with root path
     
     // Add valid routes for each section
     const sections = document.querySelectorAll('section');
@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
             validRoutes.push(`/${id}`);
         }
     });
+
+    // Add specific pages
+    validRoutes.push('/404.html');
+    validRoutes.push('/thank-you.html');
 
     // Check if current path is valid
     const currentPath = window.location.pathname;
