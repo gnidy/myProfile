@@ -76,28 +76,59 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Form submission
-    const contactForm = document.querySelector('form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const formData = new FormData(contactForm);
-            fetch('/submit-form', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Validate form
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Validate email
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            // Clear form fields
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+
+            // Submit form using Fetch API
+            fetch(this.action, {
+                method: this.method,
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
                 if (response.ok) {
-                    window.location.href = '/thank-you.html';
+                    // Redirect to thank-you page
+                    window.location.href = 'https://gnidy.com/thank-you.html';
                 } else {
                     throw new Error('Form submission failed');
                 }
-            })
-            .catch(error => {
-                alert('There was an error submitting the form.');
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('There was an issue submitting the form. Please try again.');
             });
         });
     }
 });
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
 
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
