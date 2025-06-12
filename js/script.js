@@ -13,16 +13,67 @@ document.addEventListener('click', (event) => {
     }
 });
 
-document.getElementById('current-year').textContent = new Date().getFullYear();
-
 document.addEventListener("DOMContentLoaded", () => {
-    const animateBoxes = document.querySelectorAll(".animate-box");
+    // Update current year
+    const currentYearElement = document.getElementById('current-year');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
 
+    // Handle loader
+    setTimeout(function () {
+        const loader = document.getElementById("loader");
+        if (loader) {
+            loader.style.display = "none";
+        }
+    }, 800); // 0.8 seconds
+
+    // Form submission
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission for validation
+
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+
+        this.submit(); // Submit the form if validation passes
+
+        // Clear the input fields
+        nameInput.value = '';
+        emailInput.value = '';
+        messageInput.value = '';
+         const form = this;
+
+        // Send the form data using Fetch API
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // Redirect to the thank-you page
+                window.location.href = 'https://gnidy.com/thank-you.html';
+            } else {
+                alert('There was an issue submitting the form. Please try again.');
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            alert('There was an error submitting the form.');
+        });
+    });
+
+    // Animation
+    const animateBoxes = document.querySelectorAll(".animate-box");
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Add a delay based on the element's index
-                const delay = entry.target.dataset.index * 30; // 100ms per index
+                const delay = entry.target.dataset.index * 30;
                 setTimeout(() => {
                     entry.target.classList.add("visible");
                 }, delay);
@@ -30,51 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { threshold: 0.1 });
 
-    // Assign a data-index attribute to each box for staggered animation
     animateBoxes.forEach((box, index) => {
         box.dataset.index = index;
         observer.observe(box);
-    });
-});
-
-
-// filepath: d:\myProfile\js\script.js
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission for validation
-
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const messageInput = document.getElementById('message');
-
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
-
-    this.submit(); // Submit the form if validation passes
-
-    // Clear the input fields
-    nameInput.value = '';
-    emailInput.value = '';
-    messageInput.value = '';
-     const form = this;
-
-    // Send the form data using Fetch API
-    fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            // Redirect to the thank-you page
-            window.location.href = 'https://gnidy.com/thank-you.html';
-        } else {
-            alert('There was an issue submitting the form. Please try again.');
-        }
-    }).catch(error => {
-        console.error('Error:', error);
-        alert('There was an error submitting the form.');
     });
 });
 
@@ -82,16 +91,3 @@ function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(function () {
-        const loader = document.getElementById("loader");
-        if (loader) {
-            loader.style.display = "none";
-        }
-    }, 1550); // 3 seconds
-});
