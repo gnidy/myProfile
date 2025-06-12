@@ -49,6 +49,53 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Handle direct URL access with hash
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            // Scroll to the section
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            // Prevent 404 redirect for valid sections
+            return;
+        }
+        // Only redirect to 404 if section doesn't exist
+        window.location.href = '/404.html';
+    }
+
+    // Add smooth scroll behavior for section links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Add scroll behavior for direct URL access
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Add scroll behavior for section links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
     // Handle loader
     setTimeout(function () {
         const loader = document.getElementById("loader");
