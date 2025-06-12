@@ -98,11 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Clear form fields
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
-
             // Submit form using Fetch API
             fetch('https://formspree.io/f/mnndbavr', {
                 method: 'POST',
@@ -112,6 +107,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }).then(response => {
                 if (response.ok) {
+                    // Clear form fields
+                    document.getElementById('name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('message').value = '';
+                    
                     // Redirect to thank-you page
                     window.location.href = 'https://gnidy.com/thank-you.html';
                 } else {
