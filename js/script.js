@@ -116,8 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     throw new Error(errorData.message || 'Form submission failed');
                 }
 
+                // Reset form only after thank-you page has loaded
                 window.location.href = 'thank-you.html';
-                this.reset();
+                // Form will be reset on thank-you page load
             } catch (error) {
                 console.error('Error:', error);
                 alert(`Error: ${error.message}`);
