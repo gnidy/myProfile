@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Handle 404 for invalid page paths and sections
-    const validPages = ['/']; // Add other valid pages if needed
+    const validPages = ['/', '/index.html', 'https://gnidy.com/']; // Add other valid pages if needed
     const currentPage = window.location.pathname;
     const validSectionIds = ['about-me', 'services', 'project', 'contact']; // Add other valid section IDs
     
