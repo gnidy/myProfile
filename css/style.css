@@ -2,10 +2,14 @@
     --color-r: 255;
     --color-g: 165;
     --color-b: 0;
-    --main-c: orange;
+    --main-c: #FFD700;
     --white: white;
     --main-bg: rgb(46 46 53);
     --border-color: #ccc;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+    --error-bg: #c0392b;
+    --body-font: 'Playwrite GB S', 'cursive';
     --transition: 0.3s;
     --dur: 2s;
     scroll-behavior: smooth;
