@@ -1297,3 +1297,13 @@ footer {
     -webkit-mask-size: 0    18px,0    18px,0    18px,auto
   }
 }
+
+.profile-image-container {
+    margin: 20px auto;
+    max-width: 443px;
+}
+
+.profile-image-container img {
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
