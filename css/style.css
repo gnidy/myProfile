@@ -1,10 +1,10 @@
 :root {
     --color-r: 255;
-    --color-g: 165;
+    --color-g: 157;
     --color-b: 0;
-    --main-c: rgb(255, 165, 0);
+    --main-c: rgb(255, 157, 0);
     --white: white;
-    --main-bg: rgb(44 62 80);
+    --main-bg: rgb(46 46 53);
     --border-color: #ccc;
     --success-color: #2ecc71;
     --error-color: #e74c3c;
@@ -15,10 +15,6 @@
     scroll-behavior: smooth;
 }
 
-img {
-    width: 100%;
-    height: auto;
-}
 
 
 .project .project-container .project-box {
