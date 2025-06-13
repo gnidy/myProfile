@@ -1,8 +1,8 @@
 :root {
     --color-r: 255;
-    --color-g: 165;
+    --color-g: 157;
     --color-b: 0;
-    --main-c: #FFD700;
+    --main-c: rgb(255, 157, 0);
     --white: white;
     --main-bg: rgb(46 46 53);
     --border-color: #ccc;
@@ -14,10 +14,6 @@
     --dur: 2s;
     scroll-behavior: smooth;
 }
-
-
-
-
 
 
 
@@ -177,6 +173,10 @@ a {
     /* color: var(--white); */
 }
 
+a:focus {
+    outline: 2px solid var(--main-c);
+    outline-offset: 2px;
+}
 
 .landding {
     height: 100vh;
@@ -1296,14 +1296,4 @@ footer {
   100% {
     -webkit-mask-size: 0    18px,0    18px,0    18px,auto
   }
-}
-
-.profile-image-container {
-    margin: 20px auto;
-    max-width: 443px;
-}
-
-.profile-image-container img {
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
