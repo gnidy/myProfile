@@ -83,12 +83,6 @@
     letter-spacing: 0.5px;
 }
 
-.project .project-container .project-box a {
-    color: var(--main-bg);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
 /* start animaion waves */
 
 
