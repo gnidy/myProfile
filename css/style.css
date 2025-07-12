@@ -167,10 +167,10 @@ a {
     /* color: var(--white); */
 }
 
-a:focus {
+/* a:focus {
     outline: 2px solid var(--main-c);
     outline-offset: 2px;
-}
+} */
 
 .landding {
     height: 100vh;
