@@ -26,9 +26,13 @@
     <meta property="twitter:image" content="https://www.gnidy.com/images/avatar.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="https://gnidy.com/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://gnidy.com/images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://gnidy.com/images/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="./images/AG..png">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="./images/AG..png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/AG..png">
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="https://gnidy.com/images/favicon-32x32.png"> -->
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="https://gnidy.com/images/favicon-16x16.png"> -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="https://gnidy.com/images/apple-touch-icon.png"> -->
+
     <!-- Font Loading -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" as="style">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap">
@@ -105,7 +109,11 @@
 
             <div class="image">
                 
-                <div class="myProfile"><img src="./images/avatar.png" class="myImage" alt="Profile Picture"> </div>
+                <div class="myProfile">
+                    <div class="myImage" alt="Profile Picture">
+                        <img src="./images/avatar.png" alt="Profile Picture" width="200" height="200" loading="lazy">
+                    </div>
+                </div>
                 <div class="hamster">
                     <div class="hamster__body">
                         <div class="hamster__head">
@@ -140,7 +148,7 @@
         <div class="socail phone-none ">
             <ul>
                 <li>
-                    <a href="https://github.com/gnidy/myProfile" target="_blank" alt="GitHub profile"><i class="fa-brands fa-square-github"></i></a>
+                    <a href="https://github.com/gnidy" target="_blank" alt="GitHub profile"><i class="fa-brands fa-square-github"></i></a>
                 </li>
                 <li>
                     <a href="https://www.linkedin.com/in/gnidy/" target="_blank" alt="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
@@ -149,7 +157,7 @@
                     <a href="https://www.linkedin.com/in/gnidy/" target="_blank" alt="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
                 </li>
                 <li>
-                    <a href="https://github.com/gnidy/myProfile" target="_blank" alt="GitHub profile"><i class="fa-brands fa-square-github"></i></a>
+                    <a href="https://github.com/gnidy" target="_blank" alt="GitHub profile"><i class="fa-brands fa-square-github"></i></a>
                 </li>
             </ul>
             
@@ -169,11 +177,9 @@
       </g>
     </svg>
   </div>
-        <h2>About Me </h2>
+        <h2>About Me</h2>
         <div class="content">
-            <p class="animate-box">Hello! My name is Abdo Algnidy, and I am a passionate Front-End Developer. I specialize in crafting
-                beautiful, responsive websites with a focus on user experience. My goal is to bring ideas to life
-                through clean, efficient code.</p>
+            <p class="animate-box">Hi there! I'm <span>Abdo gnidy</span>, a Front-End Developer with a passion for creating stunning, responsive websites that deliver exceptional user experiences. I take pride in transforming creative visions into reality through clean, efficient code and modern web technologies.</p>
         </div>
         <svg class=" bag" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <path fill="var(--main-bg)"
@@ -185,81 +191,79 @@
     <section id="services" class="services">
         <div class="waves-container top-wave">
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
-            <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-            </defs>
-            <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.7)" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.5)" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.3)" />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(var(--color-r),var(--color-g),var(--color-b))" />
-            </g>
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.7)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(var(--color-r),var(--color-g),var(--color-b),0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(var(--color-r),var(--color-g),var(--color-b))" />
+                </g>
             </svg>
         </div>
+        
         <h2>services</h2>
-        <svg class=" bag" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="var(--main-c)" 
-                d="M25.7,-25.4C37.9,-20.3,55.6,-16.6,61.9,-7C68.2,2.6,63.3,18.1,52.8,25.1C42.4,32.2,26.5,30.7,14,32.9C1.4,35.1,-7.8,40.9,-20.6,42.4C-33.3,43.9,-49.7,41,-55.5,31.7C-61.2,22.4,-56.5,6.6,-53.1,-8.8C-49.7,-24.2,-47.6,-39.3,-39,-45C-30.4,-50.6,-15.2,-46.9,-4.2,-41.9C6.7,-36.8,13.5,-30.4,25.7,-25.4Z"
-                transform="translate(100 100)" />
+        <svg class="bag" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="var(--main-c)" d="M25.7,-25.4C37.9,-20.3,55.6,-16.6,61.9,-7C68.2,2.6,63.3,18.1,52.8,25.1C42.4,32.2,26.5,30.7,14,32.9C1.4,35.1,-7.8,40.9,-20.6,42.4C-33.3,43.9,-49.7,41,-55.5,31.7C-61.2,22.4,-56.5,6.6,-53.1,-8.8C-49.7,-24.2,-47.6,-39.3,-39,-45C-30.4,-50.6,-15.2,-46.9,-4.2,-41.9C6.7,-36.8,13.5,-30.4,25.7,-25.4Z" transform="translate(100 100)" />
         </svg>
 
-
-        <!-- ur full is 6 to be beautiful -->
-
-	    <div id="fh5co-features">
-		    <div class="container">
-                <div class="services-padding">
-                    <div class="row">
-                        <div class="animate-box">
-                            <div class="feature-left">
-                                <span class="icon">
-                                    <i class="fa-solid fa-code"></i>
-                                </span>
-                                <div class="feature-copy">
-                                    <h3>Front-End Dev</h3>
-                                    <p>Building interactive, responsive, and user-friendly interfaces using modern frameworks and technologies.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="animate-box">
-                            <div class="feature-left">
-                                <span class="icon">
-                                    <i class="fa-solid fa-palette"></i>
-                                </span>
-                                <div class="feature-copy">
-                                    <h3>UI/UX Design</h3>
-                                    <p>Designing intuitive and visually appealing user experiences that enhance usability and engagement.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="animate-box">
-                            <div class="feature-left">
-                                <span class="icon">
-                                    <i class="fa-solid fa-chart-line"></i>
-                                </span>
-                                <div class="feature-copy">
-                                    <h3>Imporve</h3>
-                                    <p>Optimizing websites for speed, scalability, and seamless performance across all devices.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="animate-box">
-                            <div class="feature-left">
-                                <span class="icon">
-                                    <i class="fa-solid fa-mobile-screen"></i>
-                                </span>
-                                <div class="feature-copy">
-                                    <h3>Responsive Design</h3>
-                                    <p>Ensuring websites look great and function perfectly on all screen sizes and devices.</p>
-                                </div>
-                            </div>
-                        </div>
+        <div class="services-content">
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-code"></i>
+                        <div class="icon-bg"></div>
                     </div>
+                    <h3>Front-End Development</h3>
+                    <p>Building responsive, interactive websites with React, JavaScript, and modern CSS for optimal performance and user experience.</p>
+                    <a href="#contact" class="service-hover">
+                        <span class="hover-text">Learn More</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
-		    </div>
-	    </div>
-
-        
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-universal-access"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Web Accessibility</h3>
+                    <p>Creating inclusive digital experiences that are accessible to all users, following WCAG guidelines and best practices.</p>
+                    <a href="#contact" class="service-hover">
+                        <span class="hover-text">Learn More</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-rocket"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Performance</h3>
+                    <p>Optimizing websites for speed and efficiency through code refinement, asset optimization, and modern techniques.</p>
+                    <a href="#contact" class="service-hover">
+                        <span class="hover-text">Learn More</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Crafting websites that provide an optimal viewing experience across all devices and screen sizes.</p>
+                    <a href="#contact" class="service-hover">
+                        <span class="hover-text">Learn More</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
     <section id="project" class="project" >
         <h2>project</h2>
@@ -271,35 +275,45 @@
 
         <div class="project-container">
             <div class="displayX animate-box">
+                <a href="https://gnidy.github.io/Pocker-Game/" target="_blank" class="project-box" aria-label="View Shop System project">
+                    <img src="./images/PockerGame.png" alt="Shop System Screenshot">
+                    <h3>Pocker Game</h3>
+                    <p>Interactive poker game with real-time gameplay, player stats, and smooth animations.</p>
+                </a>
+                <a href="https://gnidy.github.io/Bill-System-2/" target="_blank" class="project-box" aria-label="View Shop System project">
+                    <img src="./images/ShopSystem-2.png" alt="Shop System Screenshot">
+                    <h3>Shop System</h3>
+                    <p>Full-featured e-commerce solution with product catalog, cart, and checkout system.</p>
+                </a>
                 <a href="https://card.up.railway.app" target="_blank" class="project-box" aria-label="View Green Card project">
                     <img src="./images/greenCard.png" alt="Green Card Screenshot">
                     <h3>Green Card</h3>
-                    <p>E-commerce platform, product management, and shopping cart.</p>
+                    <p>Interactive digital business card with modern design and smooth animations.</p>
                 </a>
                 <a href="https://gnidy.github.io/Bill-System/" target="_blank" class="project-box" aria-label="View Bill App project">
                     <img src="./images/ShopSystem.jpg" alt="Bill App Screenshot">
                     <h3>Bill App</h3>
-                    <p>This is a system to print and calculate bills and perform other tasks.</p>
+                    <p>Efficient billing system with receipt generation and calculation features.</p>
                 </a>
                 <a href="https://gnidy.github.io/firstWeb/" target="_blank" class="project-box" aria-label="View First Web project">
                     <img src="images/firstWeb.jpg" alt="First Web Screenshot">
-                    <h3>First Web Built</h3>
-                    <p>This is the first project I built, and it holds a special place for me.</p>
+                    <h3>First Web Project</h3>
+                    <p>My debut web project, showcasing foundational HTML and CSS skills.</p>
                 </a>
                 <a href="https://gnidy.github.io/secondWeb/" target="_blank" class="project-box" aria-label="View Second Web project">
                     <img src="images/secondWeb.jpg" alt="Second Web Screenshot">
-                    <h3>Second Web Built</h3>
-                    <p>This is another project I built, showcasing my growing skills.</p>
+                    <h3>Portfolio V2</h3>
+                    <p>Enhanced personal portfolio with improved design and interactivity.</p>
                 </a>
                 <a href="https://gnidy.github.io/thirdWeb/" target="_blank" class="project-box" aria-label="View Third Web project">
                     <img src="images/therdWeb.jpg" alt="Third Web Screenshot">
-                    <h3>Third Web Built</h3>
-                    <p>This project highlights my continued progress and learning.</p>
+                    <h3>Responsive Blog</h3>
+                    <p>Modern blog layout with responsive design and clean typography.</p>
                 </a>
                 <a href="https://gnidy.github.io/fourthWeb/" target="_blank" class="project-box" aria-label="View Fourth Web project">
                     <img src="images/fourthWeb.png" alt="Fourth Web Screenshot">
-                    <h3>Fourth Web</h3>
-                    <p>This project demonstrates my dedication to improving and refining my skills.</p>
+                    <h3>Landing Page</h3>
+                    <p>Conversion-focused landing page with smooth animations and clear CTAs.</p>
                 </a>
             </div>
         </div>
@@ -337,7 +351,7 @@
 </section>
     <footer>
         <div class="footer-bottom ">
-            <p> Copyright &copy; <span id="current-year 2025"></span> __Abdo Gnidy__</p>
+            <p> Copyright &copy; <span id="current-year 2024"></span> __Abdo Gnidy__</p>
         </div>
     </footer>
     <script src="js/script.js"></script>

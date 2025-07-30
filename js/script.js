@@ -14,34 +14,34 @@ document.addEventListener('click', (event) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Update current year
-    const currentYearElement = document.getElementById('current-year');
-    if (currentYearElement) {
-        currentYearElement.textContent = new Date().getFullYear();
-    }
 
-    // Handle 404 for invalid page paths and sections
-    const validPages = ['/', '/index.html', 'https://gnidy.com/']; // Add other valid pages if needed
-    const currentPage = window.location.pathname;
-    const validSectionIds = ['about-me', 'services', 'project', 'contact']; // Add other valid section IDs
-    
-    // Check if current page is valid
-    if (!validPages.includes(currentPage)) {
-        // If not valid and not a valid section hash, redirect to 404
-        const hash = window.location.hash;
-        if (!hash || !validSectionIds.includes(hash.substring(1))) {
-            window.location.href = '/404.html';
+        const currentYearElement = document.getElementById('current-year 2024');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
         }
-    }
 
-    // Listen for hash changes
-    window.addEventListener('hashchange', () => {
-        const currentPage = window.location.pathname;
-        const hash = window.location.hash;
-        if (!validPages.includes(currentPage) && (!hash || !validSectionIds.includes(hash.substring(1)))) {
-            window.location.href = '/404.html';
-        }
-    });
+        // // Handle 404 for invalid page paths and sections
+        // const validPages = ['/', '/index.html', 'https://gnidy.com/']; // Add other valid pages if needed
+        // const currentPage = window.location.pathname;
+        // const validSectionIds = ['about-me', 'services', 'project', 'contact']; // Add other valid section IDs
+        
+        // // Check if current page is valid
+        // if (!validPages.includes(currentPage)) {
+        //     // If not valid and not a valid section hash, redirect to 404
+        //     const hash = window.location.hash;
+        //     if (!hash || !validSectionIds.includes(hash.substring(1))) {
+        //         window.location.href = '/404.html';
+        //     }
+        // }
+
+        // // Listen for hash changes
+        // window.addEventListener('hashchange', () => {
+        //     const currentPage = window.location.pathname;
+        //     const hash = window.location.hash;
+        //     if (!validPages.includes(currentPage) && (!hash || !validSectionIds.includes(hash.substring(1)))) {
+        //         window.location.href = '/404.html';
+        //     }
+        // });
 
 
 
